@@ -1,0 +1,122 @@
+server:
+  port: 8090
+  compression:
+    # 开启 GZIP
+    enabled: true
+  servlet:
+    context-path: /o2o
+
+##数据源配置
+spring:
+
+  profiles:
+    active: dev
+
+  application:
+    name: dazhongdianping
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  ## 数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+
+    ## druid连接池
+    druid:
+      stat-view-servlet:
+        login-username: monetware
+        login-password: mt2018
+      filter:
+        slf4j:
+          enabled: true
+
+  ## 文件上传限制大小
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+      enabled: true
+
+    ## redis配置
+    # REDIS (RedisProperties)
+    # Redis数据库索引（默认为0）
+  redis:
+    database: 0
+    timeout: 5000
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password:
+    # 连接池最大连接数（使用负值表示没有限制）
+#    pool:
+#      max-active: 8
+#      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#      max-wait: -1
+#      # 连接池中的最大空闲连接
+#      max-idle: 8
+#      # 连接池中的最小空闲连接
+#      min-idle: 0
+  mvc:
+    static-path-pattern: /image/**
+  resources:
+    static-locations: file:F:/images/dazhongdianping/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  ##驼峰匹配
+  configuration:
+    map-underscore-to-camel-case: true
+
+## 通用mapper配置
+mapper:
+  mappers: com.linked.dazhongdianpingapi.system.base.MyMapper
+  not-empty: false
+  identity: MYSQL
+
+## pageHelper配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable=true: false
+  support-methods-arguments: true
+  params=count: countSql
+
+## 日志处理
+logging:
+  level:
+    io.swagger.models.parameters: error
+    ## 输出sql日志
+    com.myshop.business.dao: debug
+    org.springframework.web.client: debug
+  logdir: /Users/monetware/Desktop/monetware/ring-data-admin/logs
+  appname: dazhongdianping
+
+###手机验证码相关配置
+#sms:
+#  product: "Dysmsapi"
+#  domain: "dysmsapi.aliyuncs.com"
+#  accessKeyId: "LTAI5TdL7qkIAhpt"
+#  accessKeySecret: "F8wFl2OyKFV1i1r0I02aIeERtdfld9"
+#  signName: "锐研云调查"
+#  templateCode: "SMS_141597362"
+#
+#
+###邮箱相关配置
+#email:
+#  hostName: "smtp.mxhichina.com"
+#  userName: "support@monetware.com"
+#  password: "52Monetware"
+#  sendUser: "support@monetware.com"
+#
+###七牛云上传url##
+#qiniu:
+#  url: "http://cdn.ringdata.com/"
+
+
+
+
+
