@@ -27,8 +27,8 @@ spring:
     ## druid连接池
     druid:
       stat-view-servlet:
-        login-username: monetware
-        login-password: mt2018
+        login-username: Linked
+        login-password: 123456
       filter:
         slf4j:
           enabled: true
@@ -92,29 +92,10 @@ logging:
     ## 输出sql日志
     com.myshop.business.dao: debug
     org.springframework.web.client: debug
-  logdir: /Users/monetware/Desktop/monetware/ring-data-admin/logs
+  logdir: F:/logs/dazhongdinaping
   appname: dazhongdianping
 
-###手机验证码相关配置
-#sms:
-#  product: "Dysmsapi"
-#  domain: "dysmsapi.aliyuncs.com"
-#  accessKeyId: "LTAI5TdL7qkIAhpt"
-#  accessKeySecret: "F8wFl2OyKFV1i1r0I02aIeERtdfld9"
-#  signName: "锐研云调查"
-#  templateCode: "SMS_141597362"
-#
-#
-###邮箱相关配置
-#email:
-#  hostName: "smtp.mxhichina.com"
-#  userName: "support@monetware.com"
-#  password: "52Monetware"
-#  sendUser: "support@monetware.com"
-#
-###七牛云上传url##
-#qiniu:
-#  url: "http://cdn.ringdata.com/"
+
 
 
 
