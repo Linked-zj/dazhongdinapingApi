@@ -3,6 +3,8 @@ package com.linked.dazhongdianpingapi.business.pojo.po;
 
 import lombok.Data;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -14,9 +16,15 @@ import javax.persistence.Table;
 @Table(name = "tb_product")
 public class Product {
 
+  @Id
+  @GeneratedValue(generator = "JDBC")
   private Integer id;
 
   private Integer categoryId;
+
+  private Integer sales;
+
+  private Integer isFlash;
 
   private String name;
 

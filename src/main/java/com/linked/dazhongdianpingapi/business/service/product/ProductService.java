@@ -3,14 +3,15 @@ package com.linked.dazhongdianpingapi.business.service.product;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.linked.dazhongdianpingapi.business.dao.ProductDao;
+import com.linked.dazhongdianpingapi.business.pojo.dto.ProductDTO;
 import com.linked.dazhongdianpingapi.business.pojo.po.Product;
 import com.linked.dazhongdianpingapi.business.pojo.vo.ProductListVO;
 import com.linked.dazhongdianpingapi.system.base.PageList;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
-import java.util.List;
 
 /**
  * @author Linked
@@ -25,6 +26,7 @@ public class ProductService {
 
     /**
      * 商品列表
+     *
      * @param productListVO
      * @return
      */
@@ -36,6 +38,18 @@ public class ProductService {
         productDao.selectByExample(example);
         return new PageList<>(page);
 
+    }
+
+    /**
+     * 商品详情
+     * @param id
+     * @return
+     */
+    public ProductDTO getProductDetail(Integer id) {
+        ProductDTO productDTO = new ProductDTO();
+        Product product = productDao.selectByPrimaryKey(id);
+        BeanUtils.copyProperties(product, productDTO);
+        return productDTO;
     }
 
 }

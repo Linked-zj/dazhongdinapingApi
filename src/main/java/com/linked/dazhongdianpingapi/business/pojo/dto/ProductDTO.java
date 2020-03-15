@@ -8,6 +8,6 @@ import lombok.Data;
  * @date 2020/3/14 21:51
  */
 @Data
-public class ProductListDTO extends Product {
+public class ProductDTO extends Product {
 
 }
