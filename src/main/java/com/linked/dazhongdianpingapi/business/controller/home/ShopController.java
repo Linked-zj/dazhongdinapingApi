@@ -1,14 +1,13 @@
 package com.linked.dazhongdianpingapi.business.controller.home;
 
 import com.linked.dazhongdianpingapi.business.pojo.po.Shop;
+import com.linked.dazhongdianpingapi.business.pojo.vo.shop.ShopListVO;
 import com.linked.dazhongdianpingapi.business.service.shop.ShopService;
 import com.linked.dazhongdianpingapi.system.base.ResultData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,8 +26,8 @@ public class ShopController {
 
     @PostMapping("list")
     @ApiOperation("获取商店列表")
-    public ResultData<List<Shop>> getShopList() {
-        return new ResultData<>(0, "获取成功", shopService.getShopList());
+    public ResultData<List<Shop>> getShopList(@RequestBody ShopListVO listVO) {
+        return new ResultData<>(0, "获取成功", shopService.getShopList(listVO));
     }
 }
 
