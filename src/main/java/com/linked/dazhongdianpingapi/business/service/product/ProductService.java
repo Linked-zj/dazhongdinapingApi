@@ -2,15 +2,20 @@ package com.linked.dazhongdianpingapi.business.service.product;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.linked.dazhongdianpingapi.business.dao.CommentDao;
 import com.linked.dazhongdianpingapi.business.dao.ProductDao;
 import com.linked.dazhongdianpingapi.business.pojo.dto.ProductDTO;
+import com.linked.dazhongdianpingapi.business.pojo.po.Comment;
 import com.linked.dazhongdianpingapi.business.pojo.po.Product;
 import com.linked.dazhongdianpingapi.business.pojo.vo.ProductListVO;
+import com.linked.dazhongdianpingapi.business.pojo.vo.shop.ShopDetailVO;
 import com.linked.dazhongdianpingapi.system.base.PageList;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
+
+import java.util.List;
 
 
 /**

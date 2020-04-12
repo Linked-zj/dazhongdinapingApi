@@ -1,7 +1,6 @@
 package com.linked.dazhongdianpingapi.business.service.falshsale;
 
 import com.linked.dazhongdianpingapi.business.dao.FlashSaleDao;
-import com.linked.dazhongdianpingapi.business.pojo.dto.FlashSaleDto;
 import com.linked.dazhongdianpingapi.business.pojo.po.FlashSale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

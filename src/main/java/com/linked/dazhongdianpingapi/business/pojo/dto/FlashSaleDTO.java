@@ -8,5 +8,5 @@ import lombok.Data;
  * @date 2020/1/3 15:14
  */
 @Data
-public class FlashSaleDto extends FlashSale {
+public class FlashSaleDTO extends FlashSale {
 }

@@ -8,5 +8,5 @@ import lombok.Data;
  * @date 2020/1/6 17:27
  */
 @Data
-public class CommentSelectDto extends Comment {
+public class CommentSelectDTO extends Comment {
 }

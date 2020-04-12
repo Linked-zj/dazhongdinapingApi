@@ -8,6 +8,6 @@ import lombok.Data;
  * @date 2019/12/27 14:53
  */
 @Data
-public class HeadLineDto extends HeadLine {
+public class HeadLineDTO extends HeadLine {
 
 }

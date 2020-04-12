@@ -1,7 +1,10 @@
 package com.linked.dazhongdianpingapi.business.pojo.dto;
 
+import com.linked.dazhongdianpingapi.business.pojo.po.Comment;
 import com.linked.dazhongdianpingapi.business.pojo.po.Product;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * @author Linked
@@ -9,5 +12,7 @@ import lombok.Data;
  */
 @Data
 public class ProductDTO extends Product {
+
+    private List<Comment> comments;
 
 }

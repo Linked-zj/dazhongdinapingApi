@@ -1,6 +1,8 @@
 package com.linked.dazhongdianpingapi.business.controller.home;
 
+import com.linked.dazhongdianpingapi.business.pojo.dto.ShopDetailDTO;
 import com.linked.dazhongdianpingapi.business.pojo.po.Shop;
+import com.linked.dazhongdianpingapi.business.pojo.vo.shop.ShopDetailVO;
 import com.linked.dazhongdianpingapi.business.pojo.vo.shop.ShopListVO;
 import com.linked.dazhongdianpingapi.business.service.shop.ShopService;
 import com.linked.dazhongdianpingapi.system.base.ResultData;
@@ -29,6 +31,13 @@ public class ShopController {
     public ResultData<List<Shop>> getShopList(@RequestBody ShopListVO listVO) {
         return new ResultData<>(0, "获取成功", shopService.getShopList(listVO));
     }
+
+    @PostMapping("detail")
+    @ApiOperation("获取商店详情")
+    public ResultData<ShopDetailDTO> getsShopDetail(@RequestBody ShopDetailVO detailVO) {
+        return new ResultData<>(0, "获取成功", shopService.getShopDetail(detailVO));
+    }
+
 }
 
 
