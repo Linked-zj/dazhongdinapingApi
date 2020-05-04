@@ -8,9 +8,8 @@ import org.springframework.util.CollectionUtils;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/17 12:53
- * @Description: redis共用方法
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @SuppressWarnings("unchecked")
 @Component

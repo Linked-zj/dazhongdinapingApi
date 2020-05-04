@@ -1,9 +1,8 @@
 package com.linked.dazhongdianpingapi.system.util.threadlocal;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/15 16:55
- * @Description: 存储token中用户相关数据
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 public class ThreadLocalManager {
 	

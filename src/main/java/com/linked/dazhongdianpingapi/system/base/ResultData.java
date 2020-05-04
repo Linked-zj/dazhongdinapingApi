@@ -4,9 +4,8 @@ import com.linked.dazhongdianpingapi.system.util.threadlocal.ThreadLocalManager;
 import lombok.Data;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/15 10:38
- * @Description: 返回结果集
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @Data
 public class ResultData<T>{

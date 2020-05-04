@@ -8,9 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/15 10:42
- * @Description: 日期相关工具类
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 public class DateUtil {
 

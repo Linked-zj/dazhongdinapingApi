@@ -21,9 +21,7 @@ public enum ErrorCode {
 
 	//用户权限相关
 	DUPLICATION_OF_AUTHORITY(30001,"您已添加过该权限"),
-
-	//期刊相关
-	JOURNAL_HAVE_SCORE(40001,"此期刊已被打分，无法删除"),
+	
 
 	CUSTOM_WRONG(10000,"");
 

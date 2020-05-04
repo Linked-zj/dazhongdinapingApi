@@ -8,21 +8,19 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import java.util.UUID;
 
 /**
- * @Author: Cookie
- * @Description: JWT 相关方法
- * @Date: Create in 15:42 2019/1/15
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 public class JWTUtil {
 
     /**
      * JWT 密钥
      */
-    private static final String secret = "MONETWARE2019NICENICE";
+    private static final String secret = "LINKED2019NICENICE";
 
     /**
-     * @Author: Cookie
-     * @Date: 2019/1/15 16:11
-     * @Description: 生成TOKEN
+     * @author Linked
+     * @date 2020/5/4 17:00
      */
     public static String createToken(){
         Algorithm algorithm = Algorithm.HMAC256(secret);

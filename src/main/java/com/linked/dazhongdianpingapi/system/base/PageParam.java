@@ -6,9 +6,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/15 10:37
- * @Description: 分页参数实体类 用于VO继承
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @Data
 public class PageParam implements Serializable {

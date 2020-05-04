@@ -11,9 +11,8 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/18 15:54
- * @Description: redis配置
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @Configuration
 public class RedisConfig {

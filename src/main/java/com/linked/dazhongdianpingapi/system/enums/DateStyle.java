@@ -1,9 +1,8 @@
 package com.linked.dazhongdianpingapi.system.enums;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/15 10:38
- * @Description: 日期枚举
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 public enum DateStyle {
 	

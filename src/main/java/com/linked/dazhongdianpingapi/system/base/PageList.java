@@ -6,9 +6,8 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/15 10:37
- * @Description: 分页
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @Data
 public class PageList<T> {

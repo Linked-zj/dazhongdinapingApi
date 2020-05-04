@@ -3,9 +3,8 @@ package com.linked.dazhongdianpingapi.system.util.threadlocal;
 import lombok.Data;
 
 /**
- * @Author: Cookie
- * @Date: 2019/1/15 16:56
- * @Description: 保存至redis中用户信息（可添加
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @Data
 public class TokenContext {

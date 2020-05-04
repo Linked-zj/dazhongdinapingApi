@@ -8,9 +8,8 @@ import org.springframework.stereotype.Component;
 import java.util.Properties;
 
 /**
- * @Author: Cookie
- * @Description: 图形验证码相关配置
- * @Date: Create in 11:10 2019/1/19
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @Component
 public class KaptchaConfig {

@@ -11,9 +11,8 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @Author: Cookie
- * @Description: swagger 相关配置
- * @Date: Create in 14:02 2019/1/16
+ * @author Linked
+ * @date 2020/5/4 17:00
  */
 @Configuration
 @EnableSwagger2
