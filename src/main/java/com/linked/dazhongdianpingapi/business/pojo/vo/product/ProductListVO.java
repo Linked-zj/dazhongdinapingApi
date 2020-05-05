@@ -1,4 +1,4 @@
-package com.linked.dazhongdianpingapi.business.pojo.vo;
+package com.linked.dazhongdianpingapi.business.pojo.vo.product;
 
 import com.linked.dazhongdianpingapi.system.base.PageParam;
 import lombok.Data;

@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 /**
  * @author Linked
@@ -28,6 +29,10 @@ public class User {
   private Integer gender;
   
   private Integer role;
+
+  private Date createTime;
+
+  private String birthday;
 
 
 

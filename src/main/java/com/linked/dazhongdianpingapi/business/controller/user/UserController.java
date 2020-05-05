@@ -1,7 +1,8 @@
 package com.linked.dazhongdianpingapi.business.controller.user;
 
-import com.linked.dazhongdianpingapi.business.pojo.dto.ProductDTO;
-import com.linked.dazhongdianpingapi.business.pojo.po.User;
+import com.linked.dazhongdianpingapi.business.pojo.vo.user.UserEditVO;
+import com.linked.dazhongdianpingapi.business.pojo.vo.user.UserLoginVO;
+import com.linked.dazhongdianpingapi.business.pojo.vo.user.UserVO;
 import com.linked.dazhongdianpingapi.business.service.user.UserService;
 import com.linked.dazhongdianpingapi.system.base.ResultData;
 import io.swagger.annotations.Api;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * @author Linked
  * @date 2020/5/4 16:56
  */
-@Api("轮播图数据")
+@Api("用户相关")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -21,10 +22,22 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("login")
+    @PostMapping("register")
     @ApiOperation(value = "用户注册")
-    public ResultData<Integer> doRegister(@RequestBody User user) {
+    public ResultData<String> doRegister(@RequestBody UserVO user) {
         return new ResultData<>(0, "注册成功", userService.register(user));
+    }
+
+    @PostMapping("edit")
+    @ApiOperation(value = "用户编辑")
+    public ResultData<Integer> doEdit(@RequestBody UserEditVO editVO) {
+        return new ResultData<>(0, "编辑成功", userService.saveUser(editVO));
+    }
+
+    @PostMapping("login")
+    @ApiOperation(value = "用户登录")
+    public ResultData<String> doLogin(@RequestBody UserLoginVO loginVO) {
+        return new ResultData<>(0, "登录成功", userService.sign(loginVO));
     }
 
 

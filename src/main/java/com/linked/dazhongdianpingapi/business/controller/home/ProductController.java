@@ -1,17 +1,14 @@
 package com.linked.dazhongdianpingapi.business.controller.home;
 
 import com.linked.dazhongdianpingapi.business.pojo.dto.ProductDTO;
-import com.linked.dazhongdianpingapi.business.pojo.vo.ProductListVO;
+import com.linked.dazhongdianpingapi.business.pojo.vo.product.ProductListVO;
 import com.linked.dazhongdianpingapi.business.service.product.ProductService;
-import com.linked.dazhongdianpingapi.business.service.shop.ShopService;
 import com.linked.dazhongdianpingapi.system.base.PageList;
 import com.linked.dazhongdianpingapi.system.base.ResultData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author Linked
