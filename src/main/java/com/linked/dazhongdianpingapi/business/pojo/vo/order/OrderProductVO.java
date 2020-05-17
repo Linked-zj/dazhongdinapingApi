@@ -9,7 +9,11 @@ import lombok.Data;
 @Data
 public class OrderProductVO {
 
+    private Integer orderId;
 
+    private Integer id;
+
+    private Integer num;
 
 
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.linked.dazhongdianpingapi.business.dao.OrderDao">
+
+    <resultMap id="detailMap" type="com.linked.dazhongdianpingapi.business.pojo.dto.OrderDTO">
+        <id column="id" property="orderId"/>
+        <id column="status" property="status"/>
+        <id column="total_amount" property="totalAmount"/>
+        <collection property="orderProductList" ofType="com.linked.dazhongdianpingapi.business.pojo.dto.OrderProductDTO"
+                    select="getOrderProductList"
+                    column="{orderId=id}"></collection>
+
+    </resultMap>
+
+    <!-- 获取订单列表 -->
+    <select id="getOrderList" resultMap="detailMap">
+        select
+        tor.id,
+        tor.order_status status,
+        tor.total_amount
+        from tb_order tor
+        where 1=1
+        <if test="orderStatus != null">
+            and tor.order_status = #{orderStatus} and tor.confirm_status != 1
+        </if>
+        <if test="confirmStatus != null">
+            and tor.confirm_status = #{confirmStatus}
+        </if>
+    </select>
+
+    <select id="getOrderProductList" resultType="com.linked.dazhongdianpingapi.business.pojo.dto.OrderProductDTO">
+    select
+    tp.name,
+    tp.image_url,
+    tp.price,
+    top.num
+    from tb_order tor
+    left join tb_order_product top on tor.id = top.order_id
+    left join tb_product tp on top.product_id = tp.id
+    where tor.id = #{orderId}
+    </select>
+
+</mapper>

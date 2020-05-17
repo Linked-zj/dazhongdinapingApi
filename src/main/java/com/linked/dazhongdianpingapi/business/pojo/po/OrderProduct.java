@@ -3,7 +3,10 @@ package com.linked.dazhongdianpingapi.business.pojo.po;
 
 import lombok.Data;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Date;
 
 /**
  * @author Lin
@@ -13,14 +16,15 @@ import javax.persistence.Table;
 @Table(name = "tb_order_product")
 public class OrderProduct {
 
+  @Id
+  @GeneratedValue(generator = "JDBC")
   private Integer id;
 
   private Integer orderId;
 
   private Integer productId;
 
-  private String productName;
+  private Integer num;
 
-  private Integer productQuantity;
-
+  private Date createTime;
 }
