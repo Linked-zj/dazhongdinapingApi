@@ -1,6 +1,6 @@
 package com.linked.dazhongdianpingapi.business.dao;
 
-import com.linked.dazhongdianpingapi.business.pojo.po.Product;
+import com.linked.dazhongdianpingapi.business.pojo.po.ShopProduct;
 import com.linked.dazhongdianpingapi.system.base.MyMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 @Repository
-public interface ProductDao extends MyMapper<Product> {
+public interface ShopProductDao extends MyMapper<ShopProduct> {
 
-    Integer updateStack(Product product);
 }

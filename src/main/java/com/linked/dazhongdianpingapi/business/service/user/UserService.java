@@ -88,6 +88,12 @@ public class UserService {
     }
 
 
+
+    /**
+     * 用户编辑
+     * @param editVO
+     * @return
+     */
     public Integer saveUser(UserEditVO editVO) {
         User user = new User();
         BeanUtils.copyProperties(editVO, user);
@@ -95,6 +101,13 @@ public class UserService {
         System.out.println(ThreadLocalManager.getTokenContext().toString());
         user.setId(ThreadLocalManager.getTokenContext().getUserId());
         return userDao.updateByPrimaryKeySelective(user);
+    }
+
+    public void signOut() {
+        // 从当前线程中获取用户信息
+        TokenContext tokenContext = ThreadLocalManager.getTokenContext();
+        //从redis中删除用户信息
+        redisUtil.remove(tokenContext.getToken());
     }
 
 }

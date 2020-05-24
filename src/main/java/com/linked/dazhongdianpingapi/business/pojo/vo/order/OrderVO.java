@@ -1,7 +1,6 @@
 package com.linked.dazhongdianpingapi.business.pojo.vo.order;
 
 import com.linked.dazhongdianpingapi.business.pojo.po.Order;
-import com.linked.dazhongdianpingapi.business.pojo.po.OrderProduct;
 import lombok.Data;
 
 import java.util.List;

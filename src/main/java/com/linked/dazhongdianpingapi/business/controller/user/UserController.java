@@ -40,5 +40,12 @@ public class UserController {
         return new ResultData<>(0, "登录成功", userService.sign(loginVO));
     }
 
+    @PostMapping("signOut")
+    @ApiOperation(value = "用户登出")
+    public ResultData<Integer> signOut(){
+        userService.signOut();
+        return new ResultData<>(0,"登出成功");
+    }
+
 
 }

@@ -10,7 +10,7 @@ public class SystemConfig {
     /**
      * web端token传输标识
      */
-    public static String WEB_TOKEN = "tokenWeb";
+    public static String WEB_TOKEN = "Authorization";
 
     /**
      * app端token传输标识

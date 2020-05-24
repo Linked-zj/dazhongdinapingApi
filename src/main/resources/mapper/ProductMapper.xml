@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.linked.dazhongdianpingapi.business.dao.ProductDao">
+
+    <update id="updateStack" >
+        update tb_product
+        <set>
+            sales = sales + 1,
+        </set>
+        WHERE id = #{id}
+        AND sales = #{sales}
+
+    </update>
+
+
+</mapper>
