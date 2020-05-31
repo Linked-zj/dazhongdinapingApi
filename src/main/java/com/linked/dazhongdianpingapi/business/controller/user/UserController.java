@@ -1,5 +1,6 @@
 package com.linked.dazhongdianpingapi.business.controller.user;
 
+import com.linked.dazhongdianpingapi.business.pojo.dto.UserDTO;
 import com.linked.dazhongdianpingapi.business.pojo.vo.user.UserEditVO;
 import com.linked.dazhongdianpingapi.business.pojo.vo.user.UserLoginVO;
 import com.linked.dazhongdianpingapi.business.pojo.vo.user.UserVO;
@@ -24,7 +25,7 @@ public class UserController {
 
     @PostMapping("register")
     @ApiOperation(value = "用户注册")
-    public ResultData<String> doRegister(@RequestBody UserVO user) {
+    public ResultData<UserDTO> doRegister(@RequestBody UserVO user) {
         return new ResultData<>(0, "注册成功", userService.register(user));
     }
 
@@ -36,7 +37,7 @@ public class UserController {
 
     @PostMapping("login")
     @ApiOperation(value = "用户登录")
-    public ResultData<String> doLogin(@RequestBody UserLoginVO loginVO) {
+    public ResultData<UserDTO> doLogin(@RequestBody UserLoginVO loginVO) {
         return new ResultData<>(0, "登录成功", userService.sign(loginVO));
     }
 

@@ -1,6 +1,7 @@
 package com.linked.dazhongdianpingapi.business.service.user;
 
 import com.linked.dazhongdianpingapi.business.dao.UserDao;
+import com.linked.dazhongdianpingapi.business.pojo.dto.UserDTO;
 import com.linked.dazhongdianpingapi.business.pojo.dto.UserLoginDTO;
 import com.linked.dazhongdianpingapi.business.pojo.po.User;
 import com.linked.dazhongdianpingapi.business.pojo.vo.user.UserEditVO;
@@ -34,7 +35,7 @@ public class UserService {
     @Autowired
     private RedisUtil redisUtil;
 
-    public String register(User user) {
+    public UserDTO register(User user) {
         Example example = new Example(User.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("telephone", user.getTelephone());
@@ -54,7 +55,8 @@ public class UserService {
      * @param loginType
      * @return
      */
-    public String loginWithToken(Integer userId, Integer loginType) {
+    public UserDTO loginWithToken(Integer userId, Integer loginType) {
+        UserDTO userDTO = new UserDTO();
         TokenContext tokenContext = new TokenContext();
         tokenContext.setUserId(userId);
         tokenContext.setType(loginType);
@@ -63,7 +65,9 @@ public class UserService {
         tokenContext.setToken(securityToken);
         ThreadLocalManager.setTokenContext(tokenContext);
         redisUtil.set(securityToken, tokenContext, SystemConfig.REDIS_DELETE_TOKEN_TIME);
-        return securityToken;
+        userDTO.setToken(securityToken);
+        userDTO.setUserId(userId);
+        return userDTO;
     }
 
     /**
@@ -71,7 +75,7 @@ public class UserService {
      * @param param
      * @return
      */
-    public String sign(UserLoginVO param) {
+    public UserDTO sign(UserLoginVO param) {
         //1.加密密码
         param.setPassword(MD5.encode(param.getPassword()));
         //2.判断用户是否存在且密码是否正确

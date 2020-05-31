@@ -1,6 +1,7 @@
 package com.linked.dazhongdianpingapi.business.controller.order;
 
 import com.linked.dazhongdianpingapi.business.pojo.dto.OrderDTO;
+import com.linked.dazhongdianpingapi.business.pojo.vo.order.HashVO;
 import com.linked.dazhongdianpingapi.business.pojo.vo.order.OrderListVO;
 import com.linked.dazhongdianpingapi.business.pojo.vo.order.OrderVO;
 import com.linked.dazhongdianpingapi.business.service.order.OrderProductService;
@@ -45,4 +46,12 @@ public class OrderController {
     public ResultData<Integer> confirmOrder(@PathVariable("id") Integer id) {
         return new ResultData<>(0, "收货成功", orderService.saveOrder(id));
     }
+
+    @PostMapping("get/hash")
+    @ApiOperation(value = "获取hash码")
+    public ResultData<String> getHash(@RequestBody HashVO hashVO) {
+        return new ResultData<>(0, "获取成功", orderProductService.getVerifyHash(hashVO));
+    }
+
+
 }

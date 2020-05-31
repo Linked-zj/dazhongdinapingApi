@@ -54,6 +54,7 @@ public class UrlFilter {
                 || url.contains("product")
                 || url.contains("shop")
                 || url.contains("comment")
+                || url.contains("image")
                 ) {
             return true;
         }

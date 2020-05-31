@@ -24,6 +24,14 @@ public class FlashSale {
 
     private Double originPrice;
 
-    private String imgUrl;
+    private String imageUrl;
+
+    private String spec;
+
+    private Integer count;
+
+    private Integer sales;
+
+    private Integer status;
 
 }

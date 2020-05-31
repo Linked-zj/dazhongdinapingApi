@@ -14,5 +14,7 @@ public class OrderVO extends Order {
 
     private List<OrderProductVO> orderProductList;
 
+    private String hashCode;
+
 
 }
