@@ -16,7 +16,7 @@ import java.util.List;
  * @author Lin 测试提交
  * @date 2020/1/6 17:16
  */
-//这是一行注释
+//这是master的注释
 @Api("评论相关")
 @RestController
 @RequestMapping("/comment")
