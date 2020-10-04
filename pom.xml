@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.linked</groupId>
-    <artifactId>dazhongdinapingapi</artifactId>
+    <artifactId>dazhongdianpingapi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>dazhongdinapingapi</name>
+    <name>dazhongdianpingapi</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -27,6 +27,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
 
         <dependency>

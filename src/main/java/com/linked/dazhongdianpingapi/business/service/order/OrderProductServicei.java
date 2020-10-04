@@ -16,7 +16,6 @@ import com.linked.dazhongdianpingapi.system.exception.ServiceException;
 import com.linked.dazhongdianpingapi.system.util.redis.RedisUtil;
 import com.linked.dazhongdianpingapi.system.util.threadlocal.ThreadLocalManager;
 import lombok.extern.slf4j.Slf4j;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -38,9 +37,9 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Service
-public class OrderProductService {
+public class OrderProductServicei {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OrderProductService.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(OrderProductServicei.class);
 
     @Autowired
     private ProductDao productDao;
@@ -75,7 +74,11 @@ public class OrderProductService {
             throw new ServiceException(ErrorCode.CUSTOM_WRONG, "当前系统繁忙");
         }
         // 校验hash值
-        String hashKey = CacheKey.HASH_KEY.getKey() + "_" + orderVO.getOrderProductList().get(0).getId() + "_" + 1;
+        String hashKey = CacheKey.HASH_KEY.getKey() + "_" + orderVO.getOrderProductList().get(0).getId() + "_" + ThreadLocalManager.getTokenContext().getUserId();
+        String verifyHashInRedis = (String) redisUtil.get(hashKey);
+        if (!orderVO.getHashCode().equals(verifyHashInRedis)) {
+            throw new ServiceException(ErrorCode.CUSTOM_WRONG, "抢购失败");
+        }
         LOGGER.info("等待时间" + rateLimiter.acquire());
         int flag = 0;
         Order order = new Order();
