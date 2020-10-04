@@ -37,7 +37,8 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             //webToken验证
             return webTokenCheck.check(request);
         }else {
-            throw new ServiceException(ErrorCode.TOKEN_WITHOUT);
+            //throw new ServiceException(ErrorCode.TOKEN_WITHOUT);
+            return true;
         }
     }
 
