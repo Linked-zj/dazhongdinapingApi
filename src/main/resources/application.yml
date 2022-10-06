@@ -64,7 +64,7 @@ spring:
   mvc:
     static-path-pattern: /image/**
   resources:
-    static-locations: file:F:/images/dazhongdianping/
+    static-locations: classpath:images/dazhongdianping/
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
