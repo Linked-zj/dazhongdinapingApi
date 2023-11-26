@@ -144,6 +144,7 @@
     </dependencies>
 
     <build>
+        <finalName>dazhongdianping</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

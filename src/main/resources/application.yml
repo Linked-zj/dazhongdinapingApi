@@ -92,7 +92,7 @@ logging:
     ## 输出sql日志
     com.myshop.business.dao: debug
     org.springframework.web.client: debug
-  logdir: F:/logs/dazhongdinaping
+  logdir: /Users/linked/logs/dazhongdinaping
   appname: dazhongdianping
 
 
